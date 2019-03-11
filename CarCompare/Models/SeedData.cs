@@ -23,7 +23,8 @@ namespace CarCompare.Models {
                         Price = 2000,
                         Url = "Http://",
                         Location = "London",
-                        DateAdded = DateTime.Now
+                        DateAdded = DateTime.Now,
+                        MotExpiry = 11
                     },
                     new Car {
                         RegistrationMark = "BC12 BCD",
@@ -36,7 +37,8 @@ namespace CarCompare.Models {
                         Price = 3000,
                         Url = "Http://",
                         Location = "York",
-                        DateAdded = DateTime.Now
+                        DateAdded = DateTime.Now,
+                        MotExpiry = 5
                     }
                 );
                 context.SaveChanges();

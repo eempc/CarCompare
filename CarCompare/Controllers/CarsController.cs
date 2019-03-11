@@ -40,12 +40,14 @@ namespace CarCompare.Controllers {
             return View();
         }
 
+        // Adding a column from here via the Bind and the Car.cs (two fields to modify)
+
         // POST: Cars/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,RegistrationMark,Make,Model,TrimLevel,Mileage,Colour,Year,Price,Url,Location,DateAdded")] Car car) {
+        public async Task<IActionResult> Create([Bind("Id,RegistrationMark,Make,Model,TrimLevel,Mileage,Colour,Year,Price,Url,Location,DateAdded,MotExpiry")] Car car) {
             if (ModelState.IsValid) {
                 _context.Add(car);
                 await _context.SaveChangesAsync();
@@ -72,7 +74,7 @@ namespace CarCompare.Controllers {
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,RegistrationMark,Make,Model,TrimLevel,Mileage,Colour,Year,Price,Url,Location,DateAdded")] Car car) {
+        public async Task<IActionResult> Edit(int id, [Bind("Id,RegistrationMark,Make,Model,TrimLevel,Mileage,Colour,Year,Price,Url,Location,DateAdded,MotExpiry")] Car car) {
             if (id != car.Id) {
                 return NotFound();
             }
