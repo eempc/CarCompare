@@ -8,7 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CarCompare.Models {
     public class Car {
         public int Id { get; set; }
+
+        [Display(Name = "Reg.")]
         public string RegistrationMark { get; set; }
+
         public string Make { get; set; }
         public string Model { get; set; }
         public string TrimLevel { get; set; }
