@@ -16,8 +16,15 @@ namespace CarCompare.Controllers {
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index() {
-            return View(await _context.Car.ToListAsync());
+        public async Task<IActionResult> Index(string searchString) {
+            var cars = from c in _context.Car select c;
+            if (!String.IsNullOrEmpty(searchString)) {
+                cars = cars.Where(s => s.Make.Contains(searchString));
+            }
+
+            return View(await cars.ToListAsync());
+
+            //return View(await _context.Car.ToListAsync()); //Only line needed if display all records with no search
         }
 
         // GET: Cars/Details/5

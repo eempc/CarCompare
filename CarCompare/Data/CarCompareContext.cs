@@ -14,5 +14,6 @@ namespace CarCompare.Models
         }
 
         public DbSet<CarCompare.Models.Car> Car { get; set; }
+        
     }
 }

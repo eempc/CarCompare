@@ -15,7 +15,8 @@ namespace CarCompare {
     public class Program {
         public static void Main(string[] args) {
             //CreateWebHostBuilder(args).Build().Run();
-            // See data
+            
+            // Seed data
             var host = CreateWebHostBuilder(args).Build();
             using (var scope = host.Services.CreateScope()) {
                 var services = scope.ServiceProvider;
