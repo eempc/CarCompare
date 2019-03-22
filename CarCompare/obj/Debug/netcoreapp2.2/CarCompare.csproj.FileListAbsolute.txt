@@ -34,3 +34,5 @@ D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Detai
 D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Edit.g.cshtml.cs
 D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Cars\Index.g.cshtml.cs
 D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
+D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Home\Test.g.cshtml.cs
+D:\Projects\CarCompare\CarCompare\obj\Debug\netcoreapp2.2\Razor\Views\Home\Portfolio.g.cshtml.cs

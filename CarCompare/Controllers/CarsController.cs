@@ -19,7 +19,10 @@ namespace CarCompare.Controllers {
         public async Task<IActionResult> Index(string searchString) {
             var cars = from c in _context.Car select c;
             if (!String.IsNullOrEmpty(searchString)) {
-                cars = cars.Where(s => s.Make.Contains(searchString));
+                cars = cars.Where(s => 
+                s.Make.Contains(searchString) ||
+                s.Model.Contains(searchString)
+                );
             }
 
             return View(await cars.ToListAsync());

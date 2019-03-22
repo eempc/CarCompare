@@ -1,101 +1,113 @@
 ﻿@model IEnumerable<CarCompare.Models.Car>
 
 @{
-    ViewData["Title"] = "Index";
+  ViewData["Title"] = "Index";
+
 }
 
 <h1>Index</h1>
+<form asp-controller="Cars" asp-action="Index">
+  <div style="display: flex; justify-content: flex-start;  align-items: center;" class="bg-light">
+    <p>
+      <a asp-action="Create" style="padding: 0px; color: black; border: 1px solid black; ">Create New</a>
+    </p>
+    <p>
+      Search filter:
+    </p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <input type="text" name="SearchString" />
+    <input type="submit" value="Filter" />
+
+  </div>
+</form>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.RegistrationMark)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Make)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrimLevel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mileage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Colour)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateAdded)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotExpiry)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegistrationMark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Make)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrimLevel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mileage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Colour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a href="@item.Url">Link</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateAdded)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotExpiry)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.RegistrationMark)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Make)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Model)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.TrimLevel)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Mileage)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Colour)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Year)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Price)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Url)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Location)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.DateAdded)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.MotExpiry)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.RegistrationMark)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.TrimLevel)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Mileage)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Colour)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+          <a href="@item.Url" style="color: black;">Link</a>
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.DateAdded)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.MotExpiry)
+        </td>
+        <td>
+          <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+          <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+          <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+      </tr>
+    }
+  </tbody>
 </table>

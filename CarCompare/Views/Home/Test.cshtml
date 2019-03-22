@@ -1,11 +1,47 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Test";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="test-container">
-  <h1 class="test-h1">Test</h1>
+@{ string myMessage = "Hello";
+    int x = 2;
+}
 
+<div class="test-body">
+  <h1 class="test-h1">Test of C# razor</h1>
+  <div class="test-container">
+    <p>@myMessage</p>
+    <p>Date: @DateTime.Now.ToString("yyyy MMMM dd")</p>
+    <p>Time: @DateTime.Now.ToString("HH:mm")</p>
+    <p>Day: @DateTime.Now.DayOfWeek</p>
+    <div style="background-color: lightblue; width: 100%; display: flex;">
+      @for (int i = 0; i < 5; i++)
+      {
+          <p style="padding: 10px;">For loop: @i</p>
+      }
+    </div>
+    <div>
+      @if (false)
+      {
+          <p>True</p>
+      }
+      else
+      {
+          <p>False</p>
+      }
+    </div>
+    <div>
+      @switch (x)
+      {
+        case 0:
+          <p>zero</p>
+          break;
+        case 2:
+          <p>two</p>
+          break;
+      }
+    </div>
+
+  </div>
 
 </div>
