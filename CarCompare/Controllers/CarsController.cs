@@ -17,14 +17,15 @@ namespace CarCompare.Controllers {
 
         // GET: Cars
         public async Task<IActionResult> Index(string searchString) {
-            var cars = from c in _context.Car select c;
+            // Is this efficient? It takes all the cars first then filters
+            var cars = from c in _context.Car select c; //This is LINQ format so it casts the "var cars" to that IENumerable type. There it has access to methods such as .Where
             if (!String.IsNullOrEmpty(searchString)) {
                 cars = cars.Where(s => 
                 s.Make.Contains(searchString) ||
                 s.Model.Contains(searchString)
                 );
             }
-
+            // This does not re-make the cars list even though it says cars = cars.etc, i.e. it is not like str = str + "x"; which creates a new str
             return View(await cars.ToListAsync());
 
             //return View(await _context.Car.ToListAsync()); //Only line needed if display all records with no search
@@ -50,7 +51,7 @@ namespace CarCompare.Controllers {
             return View();
         }
 
-        // Adding a column from here via the Bind and the Car.cs (two fields to modify)
+        // Adding a column from here via the Bind and the Car.cs (two string fields to modify)
 
         // POST: Cars/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
